@@ -1,60 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://nbwjvd3x5qhj"]
+[gd_scene load_steps=5 format=3 uid="uid://nbwjvd3x5qhj"]
+
+[ext_resource type="Texture2D" uid="uid://cbkrg2kjvxf7q" path="res://assets/fon.png" id="1_fmbts"]
 
 [sub_resource type="GDScript" id="GDScript_vn0wr"]
 script/source = "extends Minigame
 
-var correct_combination = [9, 9, 7]
+var correct_combination0 = [9, 9, 7]
+
+var correct_combination1 = [1, 1, 2]
+
+var correct_combination2 = [4, 2, 0]
 
 var player_sequence = []
 
 func _on_button_0_pressed() -> void:
 	player_sequence.append(0)
-	_is_three()
+	_is_three(0)
 
 
 func _on_button_1_pressed() -> void:
 	player_sequence.append(1)
-	_is_three()
+	_is_three(1)
 
 
 func _on_button_2_pressed() -> void:
 	player_sequence.append(2)
-	_is_three()
+	_is_three(2)
 
 
 func _on_button_3_pressed() -> void:
 	player_sequence.append(3)
-	_is_three()
+	_is_three(3)
 
 
 func _on_button_4_pressed() -> void:
 	player_sequence.append(4)
-	_is_three()
+	_is_three(4)
 
 
 func _on_button_5_pressed() -> void:
 	player_sequence.append(5)
-	_is_three()
+	_is_three(5)
 
 
 func _on_button_6_pressed() -> void:
 	player_sequence.append(6)
-	_is_three()
+	_is_three(6)
 
 
 func _on_button_7_pressed() -> void:
 	player_sequence.append(7)
-	_is_three()
+	_is_three(7)
 
 
 func _on_button_8_pressed() -> void:
 	player_sequence.append(8)
-	_is_three()
+	_is_three(8)
 
 
 func _on_button_9_pressed() -> void:
 	player_sequence.append(9)
-	_is_three()
+	_is_three(9)
 
 func _on_lose():
 	self.mingame_failed.emit()
@@ -62,96 +68,134 @@ func _on_lose():
 func _on_win():
 	self.minigame_complete.emit()
 
-func _is_three() -> void:
+
+func _is_three(num) -> void:
 	if player_sequence.size() == 3: 
-		if player_sequence == correct_combination:
+		if player_sequence == correct_combination0 or player_sequence == correct_combination1 or player_sequence == correct_combination2:
 			_on_win()
 			print(\"ez\")
 		else:
 			_on_lose()
 			print(\"dupa\")
+	else:
+		append_text(num)
+func append_text(new_text):
+	$fon/Label.text += str(new_text)
 "
+
+[sub_resource type="GDScript" id="GDScript_fmbts"]
+script/source = "extends Node2D  # or whatever your node type is
+
+# Configuration variables
+var shake_strength: float = 30.0
+var shake_speed: float = 1.0
+
+var original_position: Vector2
+var shake_offset: Vector2 = Vector2.ZERO
+
+func _ready():
+	original_position = position
+	
+func _process(delta):
+	# Generate random offset
+	shake_offset = Vector2(
+		randf_range(-shake_strength, shake_strength),
+		randf_range(-shake_strength, shake_strength)
+	)
+	
+	# Apply to position
+	position = original_position + shake_offset
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmbts"]
+font_size = 98
+font_color = Color(0, 0, 0, 1)
 
 [node name="Police" type="Node2D"]
 script = SubResource("GDScript_vn0wr")
 
-[node name="Button0" type="Button" parent="."]
-offset_left = 71.0
-offset_top = 271.0
-offset_right = 89.0
-offset_bottom = 302.0
-text = "0"
+[node name="fon" type="Node2D" parent="."]
+script = SubResource("GDScript_fmbts")
 
-[node name="Button1" type="Button" parent="."]
-offset_left = 31.0
-offset_top = 119.0
-offset_right = 49.0
-offset_bottom = 150.0
-text = "1"
+[node name="Button0" type="Button" parent="fon"]
+offset_left = 443.0
+offset_top = 443.0
+offset_right = 569.0
+offset_bottom = 474.0
 
-[node name="Button2" type="Button" parent="."]
-offset_left = 65.0
-offset_top = 120.0
-offset_right = 83.0
-offset_bottom = 151.0
-text = "2"
+[node name="Button1" type="Button" parent="fon"]
+offset_left = 304.0
+offset_top = 265.0
+offset_right = 415.0
+offset_bottom = 311.0
 
-[node name="Button3" type="Button" parent="."]
-offset_left = 104.0
-offset_top = 119.0
-offset_right = 122.0
-offset_bottom = 150.0
-text = "3"
+[node name="Button2" type="Button" parent="fon"]
+offset_left = 448.0
+offset_top = 301.0
+offset_right = 573.0
+offset_bottom = 332.0
 
-[node name="Button4" type="Button" parent="."]
-offset_left = 105.0
-offset_top = 167.0
-offset_right = 123.0
-offset_bottom = 198.0
-text = "4"
+[node name="Button3" type="Button" parent="fon"]
+offset_left = 610.0
+offset_top = 276.0
+offset_right = 725.0
+offset_bottom = 320.0
 
-[node name="Button5" type="Button" parent="."]
-offset_left = 68.0
-offset_top = 168.0
-offset_right = 86.0
-offset_bottom = 199.0
-text = "5"
+[node name="Button4" type="Button" parent="fon"]
+offset_left = 306.0
+offset_top = 317.0
+offset_right = 412.0
+offset_bottom = 360.0
 
-[node name="Button6" type="Button" parent="."]
-offset_left = 31.0
-offset_top = 167.0
-offset_right = 49.0
-offset_bottom = 198.0
-text = "6"
+[node name="Button5" type="Button" parent="fon"]
+offset_left = 444.0
+offset_top = 346.0
+offset_right = 567.0
+offset_bottom = 377.0
 
-[node name="Button7" type="Button" parent="."]
-offset_left = 33.0
-offset_top = 214.0
-offset_right = 51.0
-offset_bottom = 245.0
-text = "7"
+[node name="Button6" type="Button" parent="fon"]
+offset_left = 596.0
+offset_top = 330.0
+offset_right = 710.0
+offset_bottom = 366.0
 
-[node name="Button8" type="Button" parent="."]
-offset_left = 71.0
-offset_top = 215.0
-offset_right = 89.0
-offset_bottom = 246.0
-text = "8"
+[node name="Button7" type="Button" parent="fon"]
+offset_left = 310.0
+offset_top = 367.0
+offset_right = 415.0
+offset_bottom = 414.0
 
-[node name="Button9" type="Button" parent="."]
-offset_left = 104.0
-offset_top = 215.0
-offset_right = 122.0
-offset_bottom = 246.0
-text = "9"
+[node name="Button8" type="Button" parent="fon"]
+offset_left = 441.0
+offset_top = 394.0
+offset_right = 570.0
+offset_bottom = 425.0
 
-[connection signal="pressed" from="Button0" to="." method="_on_button_0_pressed"]
-[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
-[connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
+[node name="Button9" type="Button" parent="fon"]
+offset_left = 596.0
+offset_top = 374.0
+offset_right = 717.0
+offset_bottom = 417.0
+
+[node name="Sprite2D" type="Sprite2D" parent="fon"]
+position = Vector2(461, 223)
+scale = Vector2(1.32666, 0.659668)
+texture = ExtResource("1_fmbts")
+
+[node name="Label" type="Label" parent="fon"]
+offset_left = 430.0
+offset_top = 102.0
+offset_right = 1103.0
+offset_bottom = 639.0
+label_settings = SubResource("LabelSettings_fmbts")
+
+[connection signal="pressed" from="fon/Button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="fon/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="fon/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="fon/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="fon/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="fon/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="fon/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="fon/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="fon/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="fon/Button9" to="." method="_on_button_9_pressed"]
