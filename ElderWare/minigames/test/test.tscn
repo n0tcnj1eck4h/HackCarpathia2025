@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv4xi2qm1sbqr"]
+
+[ext_resource type="Script" uid="uid://dh5r7qnnau8q8" path="res://minigames/test/test.gd" id="1_7g07r"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_7g07r")
+
+[node name="Lose" type="Button" parent="."]
+offset_left = 204.0
+offset_top = 58.0
+offset_right = 328.0
+offset_bottom = 89.0
+text = "Przegraj gierkę
+"
+
+[node name="Win" type="Button" parent="."]
+offset_left = 83.1818
+offset_top = 58.157
+offset_right = 91.1818
+offset_bottom = 66.157
+text = "Wygraj gierkę"
