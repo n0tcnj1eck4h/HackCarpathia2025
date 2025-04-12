@@ -5,6 +5,7 @@ const MINIGAMES = [
 	preload("res://minigames/test/test.tscn"),
 	preload("res://minigames/pills/getyourmeds.tscn"),
 	preload("res://minigames/police/police.tscn"),
+	preload("res://minigames/stroke_that_cat/stroke_that_cat.tscn"),
 ]
 
 var clock
