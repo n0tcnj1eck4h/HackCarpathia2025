@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpihysfm03hjx"]
+
+[ext_resource type="Texture2D" uid="uid://bdgc157o1odp8" path="res://assets/farsz.png" id="1_vd7y0"]
+
+[node name="filling" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, 19)
+texture = ExtResource("1_vd7y0")

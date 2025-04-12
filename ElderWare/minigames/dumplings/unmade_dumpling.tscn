@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://fcwmsna2awwl"]
+
+[ext_resource type="Texture2D" uid="uid://crooqavodlvyt" path="res://assets/unmade_pierog.png" id="1_wa07k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofu6e"]
+radius = 72.8354
+
+[node name="UnmadeDumpling" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10.375, -1.62499)
+scale = Vector2(0.221436, 0.221436)
+texture = ExtResource("1_wa07k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
+shape = SubResource("CircleShape2D_ofu6e")
