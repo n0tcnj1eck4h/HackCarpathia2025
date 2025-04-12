@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8uxnfkko0msv"]
+[gd_scene load_steps=4 format=3 uid="uid://b8uxnfkko0msv"]
 
 [ext_resource type="Script" uid="uid://0li4w8dqe4h8" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cv4xi2qm1sbqr" path="res://minigames/test/test.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bdnlawybchdkc" path="res://łapa.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0xm2m")
@@ -21,3 +22,5 @@ offset_top = 136.0
 offset_right = 241.0
 offset_bottom = 159.0
 text = "Transition text"
+
+[node name="Łapa" parent="." instance=ExtResource("3_h2yge")]
