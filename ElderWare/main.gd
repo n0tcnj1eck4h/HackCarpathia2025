@@ -14,6 +14,7 @@ func _ready() -> void:
 	self._next_minigame()
 
 func _clear_minigame():
+	$"Łapa".gigapaluch(false)
 	for child in $MinigameContainer.get_children():
 		child.queue_free()
 

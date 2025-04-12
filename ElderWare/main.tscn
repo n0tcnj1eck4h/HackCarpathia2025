@@ -34,6 +34,7 @@ text = "Score: 0"
 [node name="MinigameContainer" type="Node2D" parent="."]
 
 [node name="Łapa" parent="." instance=ExtResource("3_h2yge")]
+unique_name_in_owner = true
 
 [node name="Status" type="Label" parent="."]
 offset_left = 111.0
