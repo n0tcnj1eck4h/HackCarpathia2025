@@ -4,6 +4,7 @@ var score = 0
 const MINIGAMES = [
 	preload("res://minigames/test/test.tscn"),
 	preload("res://minigames/pills/getyourmeds.tscn"),
+	preload("res://minigames/police/police.tscn"),
 ]
 
 func _ready() -> void:
