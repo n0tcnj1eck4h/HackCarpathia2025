@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqa628viab5yw"]
+
+[ext_resource type="Script" uid="uid://hi5yrvwrnd83" path="res://minigames/pills/evil_pill.gd" id="1_4pqm3"]
+[ext_resource type="Texture2D" uid="uid://0afawwgdxx3p" path="res://minigames/pills/pod.png" id="1_xsbow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4pqm3"]
+radius = 51.2445
+
+[node name="EvilPill" type="Node2D"]
+script = ExtResource("1_4pqm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.08375, 0.0979167)
+texture = ExtResource("1_xsbow")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4pqm3")

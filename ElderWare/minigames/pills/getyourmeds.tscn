@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv4hlccxu85vs"]
+
+[ext_resource type="Script" uid="uid://bub1uxdjykbki" path="res://minigames/pills/getyourmeds.gd" id="1_vaxek"]
+
+[node name="Getyourmeds" type="Node2D"]
+script = ExtResource("1_vaxek")
