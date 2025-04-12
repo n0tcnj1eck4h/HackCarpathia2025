@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dox823vm06eg6"
+=======
+uid="uid://d3k0i7awr1gb5"
+>>>>>>> eff906e (dumplings)
 path="res://.godot/imported/pigulka2.png-c4aacdf709dd3656aef33679b50f8886.ctex"
 metadata={
 "vram_texture": false

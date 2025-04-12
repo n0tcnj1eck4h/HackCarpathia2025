@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://byqa6mnlldnwy"
+=======
+uid="uid://b64hlv2ou5xsu"
+>>>>>>> eff906e (dumplings)
 path="res://.godot/imported/tablecloth.png-3e798975001e6f28956c608742298c71.ctex"
 metadata={
 "vram_texture": false

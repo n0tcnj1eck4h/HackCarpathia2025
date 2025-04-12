@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ndltiufv2afv"
+=======
+uid="uid://df8nqru6rhtv1"
+>>>>>>> eff906e (dumplings)
 path="res://.godot/imported/sloik.png-8939ba0ccffe454ded66fe80cf510461.ctex"
 metadata={
 "vram_texture": false

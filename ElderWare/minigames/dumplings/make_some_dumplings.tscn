@@ -1,26 +1,101 @@
-[gd_scene load_steps=4 format=3 uid="uid://catmauxtq2rmk"]
+[gd_scene load_steps=4 format=3 uid="uid://b1e64j0vwf4w5"]
 
-[ext_resource type="Script" uid="uid://cnjo1gtbmqebg" path="res://minigames/dumplings/make_some_dumplings.gd" id="1_7pipn"]
-[ext_resource type="PackedScene" uid="uid://xeqis28gpc2a" path="res://minigames/dumplings/spoon.tscn" id="1_m47mg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pipn"]
-size = Vector2(1845, 745)
+[ext_resource type="PackedScene" uid="uid://fcwmsna2awwl" path="res://minigames/dumplings/unmade_dumpling.tscn" id="2_kv7ns"]
+[ext_resource type="Texture2D" uid="uid://b64hlv2ou5xsu" path="res://assets/tablecloth.png" id="3_kv7ns"]
+[ext_resource type="PackedScene" uid="uid://dpihysfm03hjx" path="res://minigames/dumplings/filling.tscn" id="3_y2cme"]
 
 [node name="MakeSomeDumplings" type="Node2D"]
-script = ExtResource("1_7pipn")
 
-[node name="Spoon" parent="." instance=ExtResource("1_m47mg")]
-position = Vector2(223, 917)
+[node name="Unmade dumplings" type="Node" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3, 0)
-anchor_mode = 0
-limit_right = 1920
-limit_bottom = 1080
+[node name="UnmadeDumpling" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(344, 123)
+scale = Vector2(0.717973, 0.717973)
 
-[node name="DumplingSpawner" type="Area2D" parent="."]
-position = Vector2(1152, 688)
+[node name="UnmadeDumpling2" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(504, 267)
+scale = Vector2(0.717973, 0.717973)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DumplingSpawner"]
-position = Vector2(-194.5, -284.5)
-shape = SubResource("RectangleShape2D_7pipn")
+[node name="UnmadeDumpling10" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(653, 264)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="UnmadeDumpling11" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(800, 264)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="UnmadeDumpling3" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(344, 267)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="UnmadeDumpling5" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(800, 123)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="UnmadeDumpling6" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(653, 120)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="UnmadeDumpling8" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
+position = Vector2(501, 120)
+scale = Vector2(0.717973, 0.717973)
+
+[node name="Fillings" type="Node" parent="."]
+
+[node name="Filling" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(296, 416)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling10" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(672, 512)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling2" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(408, 400)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling3" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(797, 408)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling4" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(528, 408)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling5" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(797, 528)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling6" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(568, 512)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling7" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(448, 512)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling8" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(312, 520)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Filling9" parent="Fillings" instance=ExtResource("3_y2cme")]
+position = Vector2(653, 408)
+rotation = -0.902242
+scale = Vector2(0.308342, 0.315414)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(752, 232)
+scale = Vector2(0.175209, 0.175209)
+texture = ExtResource("3_kv7ns")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
