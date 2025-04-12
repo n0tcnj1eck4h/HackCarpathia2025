@@ -45,7 +45,7 @@ func _on_minigame_complete():
 	$Status.text = "Tak trzymaj!"
 	$Status.visible = true
 	$Score.text = "Score: %s" % score
-	$GrandfatherClock.get_child(0).kill_babushka()
+	$GrandfatherClock.get_child(0).yipie()
 	await get_tree().create_timer(2.0).timeout
 	$Status.visible = false
 	self._next_minigame()
