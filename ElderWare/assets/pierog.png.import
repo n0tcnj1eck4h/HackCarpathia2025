@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bsx4cbb67d06b"
+=======
+uid="uid://dgyg0ab8u0jfn"
+>>>>>>> eff906e (dumplings)
 path="res://.godot/imported/pierog.png-71852ca2ae32990f44cdfd2cdb82dc33.ctex"
 metadata={
 "vram_texture": false

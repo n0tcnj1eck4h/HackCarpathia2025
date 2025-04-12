@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://c7do17hef5cqg"
-=======
-uid="uid://bgq3t1xyoimxy"
->>>>>>> eff906e (dumplings)
-path="res://.godot/imported/hp.png-b39ac722e91d55393f334f14ff30a035.ctex"
+uid="uid://d3bpte4hg1dcm"
+path="res://.godot/imported/telewizor.png-1b5a57d58a58fe319bbaec1298044eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hp.png"
-dest_files=["res://.godot/imported/hp.png-b39ac722e91d55393f334f14ff30a035.ctex"]
+source_file="res://assets/telewizor.png"
+dest_files=["res://.godot/imported/telewizor.png-1b5a57d58a58fe319bbaec1298044eb9.ctex"]
 
 [params]
 
