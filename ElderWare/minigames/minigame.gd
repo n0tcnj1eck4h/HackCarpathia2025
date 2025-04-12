@@ -1,7 +1,5 @@
 extends Node
 class_name Minigame
 
-enum FailureReason{TIME, IDIOT}
-
-signal mingame_failed(reason: FailureReason)
+signal mingame_failed
 signal minigame_complete

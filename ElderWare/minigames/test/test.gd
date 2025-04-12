@@ -7,7 +7,7 @@ func _ready() -> void:
 	$Win.pressed.connect(self._on_win)
 
 func _on_lose():
-	self.mingame_failed.emit(FailureReason.IDIOT)
+	self.mingame_failed.emit()
 
 func _on_win():
 	self.minigame_complete.emit()

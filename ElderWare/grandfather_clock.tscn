@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dka7nr06hykks"]
+
+[ext_resource type="Script" uid="uid://dcofmi5r632kf" path="res://baba.gd" id="1_bqjjx"]
+[ext_resource type="Texture2D" uid="uid://ciqnpwjntjwij" path="res://assets/timer_body.png" id="2_i3puy"]
+[ext_resource type="Texture2D" uid="uid://cj3c3kfjufdxa" path="res://assets/timer_arms.png" id="3_yisu6"]
+[ext_resource type="Texture2D" uid="uid://do5xmeqlc8vvc" path="res://assets/timer_path.png" id="4_8cdua"]
+
+[node name="GrandfatherClock" type="Node2D"]
+
+[node name="Baba" type="Node2D" parent="."]
+position = Vector2(175, 555)
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_bqjjx")
+
+[node name="Bababody" type="Sprite2D" parent="Baba"]
+texture = ExtResource("2_i3puy")
+
+[node name="Babalimbs" type="Sprite2D" parent="Baba"]
+texture = ExtResource("3_yisu6")
+
+[node name="Path" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(568, 421)
+scale = Vector2(0.955, 0.955)
+texture = ExtResource("4_8cdua")

@@ -8,6 +8,7 @@ const MINIGAMES = [
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Status.visible = false
+	$GrandfatherClock.get_child(0).time_ended.connect(self._on_minigame_failed)
 	self._next_minigame()
 
 func _clear_minigame():
@@ -19,17 +20,20 @@ func _next_minigame():
 	minigame.mingame_failed.connect(self._on_minigame_failed)
 	minigame.minigame_complete.connect(self._on_minigame_complete)
 	$MinigameContainer.add_child(minigame) 
+	$GrandfatherClock.get_child(0).reset()
 	
 	
-func _on_minigame_failed(reason):
+func _on_minigame_failed():
 	self._clear_minigame()
 	score -= 1
 	$Status.text = "Porażka"
 	$Status.visible = true
 	$Score.text = "Score: %s" % score
+	$GrandfatherClock.get_child(0).kill_babushka()
 	await get_tree().create_timer(2.0).timeout
 	$Status.visible = false
 	self._next_minigame()
+
 	
 
 func _on_minigame_complete():
@@ -38,6 +42,7 @@ func _on_minigame_complete():
 	$Status.text = "Tak trzymaj!"
 	$Status.visible = true
 	$Score.text = "Score: %s" % score
+	$GrandfatherClock.get_child(0).kill_babushka()
 	await get_tree().create_timer(2.0).timeout
 	$Status.visible = false
 	self._next_minigame()
