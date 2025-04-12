@@ -7,6 +7,8 @@ var y_pos = 550.0
 var time = 10.0
 var speed = (start_pos - end_pos) / time 
 var dead = false
+const ThubsUp = preload("res://assets/timer_ok.png")
+const Walk = preload("res://assets/timer_body.png")
 
 signal time_ended
 
@@ -28,8 +30,19 @@ func reset():
 	self.position.y = y_pos
 	self.dead = false
 	self.rotation = 0.0
+	$Bababody.texture = Walk
+	$Babalimbs.visible = true
 	
 func kill_babushka():
-	self.rotate(PI / 2)
+	self.rotate(PI / 2 * 3)
 	self.dead = true
+	
+	
+func yipie():
+	self.dead = true
+	$Bababody.texture = ThubsUp
+	$Babalimbs.visible = false
+	
+	
+	
 	
