@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ctqw6piggx6uy"
+=======
+uid="uid://cw2fjiw74oqkb"
+>>>>>>> eff906e (dumplings)
 path="res://.godot/imported/lapa_squeez.png-5ec452810ba4abd0cd6e1996ad48f262.ctex"
 metadata={
 "vram_texture": false
