@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ylrlarouwrb"]
+
+[ext_resource type="Script" uid="uid://hi5yrvwrnd83" path="res://minigames/pills/evil_pill.gd" id="1_6sbgc"]
+[ext_resource type="Texture2D" uid="uid://dr75adrrp4dgs" path="res://assets/pigulka3.png" id="2_6sbgc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4pqm3"]
+radius = 74.108
+
+[node name="EpicPill" type="Node2D"]
+script = ExtResource("1_6sbgc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, 76)
+scale = Vector2(0.329, 0.383)
+texture = ExtResource("2_6sbgc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4pqm3")

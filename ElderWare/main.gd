@@ -2,7 +2,8 @@ extends Node2D
 
 var score = 0
 const MINIGAMES = [
-	preload("res://minigames/test/test.tscn")
+	preload("res://minigames/test/test.tscn"),
+	preload("res://minigames/pills/getyourmeds.tscn"),
 ]
 
 func _ready() -> void:
@@ -19,10 +20,12 @@ func _next_minigame():
 	var minigame = MINIGAMES.pick_random().instantiate()
 	minigame.mingame_failed.connect(self._on_minigame_failed)
 	minigame.minigame_complete.connect(self._on_minigame_complete)
+	self._clear_minigame()
 	$MinigameContainer.add_child(minigame) 
 	$GrandfatherClock.get_child(0).reset()
 	
 	
+
 func _on_minigame_failed():
 	self._clear_minigame()
 	score -= 1

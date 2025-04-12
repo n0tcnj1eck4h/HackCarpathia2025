@@ -4,13 +4,12 @@ var rpm = 1.0
 var velocity = Vector2(200, 50)
 var size := Vector2(32, 32)
 
-signal evil_signal
+signal epic_signal
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"Area2D".input_event.connect(_on_input_event)
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,4 +42,4 @@ func _process(delta: float) -> void:
 func _on_input_event(viewport: Viewport, event: InputEvent, idx: int) -> void:
 	if event is InputEventMouse:
 		if event.is_pressed() and self.get_viewport_rect().has_point(event.position):
-			self.queue_free()
+			epic_signal.emit()
