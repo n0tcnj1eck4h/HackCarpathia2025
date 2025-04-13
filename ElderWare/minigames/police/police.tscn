@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://nbwjvd3x5qhj"]
+[gd_scene load_steps=6 format=3 uid="uid://nbwjvd3x5qhj"]
 
 [ext_resource type="Texture2D" uid="uid://cbkrg2kjvxf7q" path="res://assets/fon.png" id="1_fmbts"]
+[ext_resource type="AudioStream" uid="uid://mggcjfmr65lv" path="res://sounds/haloPolicja.mp3" id="2_xmhw0"]
 
 [sub_resource type="GDScript" id="GDScript_vn0wr"]
 script/source = "extends Minigame
+
 
 var correct_combination0 = [9, 9, 7]
 
@@ -76,10 +78,8 @@ func _is_three(num) -> void:
 	if player_sequence.size() == 3: 
 		if player_sequence == correct_combination0 or player_sequence == correct_combination1 or player_sequence == correct_combination2:
 			_on_win()
-			print(\"ez\")
 		else:
 			_on_lose()
-			print(\"dupa\")
 	else:
 		append_text(num)
 func append_text(new_text):
@@ -191,6 +191,11 @@ offset_top = 102.0
 offset_right = 1103.0
 offset_bottom = 639.0
 label_settings = SubResource("LabelSettings_fmbts")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xmhw0")
+volume_db = 10.0
+autoplay = true
 
 [connection signal="pressed" from="fon/Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="fon/Button1" to="." method="_on_button_1_pressed"]

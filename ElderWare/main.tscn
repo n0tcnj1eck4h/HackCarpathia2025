@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8uxnfkko0msv"]
+[gd_scene load_steps=27 format=3 uid="uid://b8uxnfkko0msv"]
 
 [ext_resource type="Script" uid="uid://0li4w8dqe4h8" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bdnlawybchdkc" path="res://łapa.tscn" id="3_h2yge"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://bukhf34mt2o8k" path="res://assets/remote_animation/frame0010.png" id="18_htxhm"]
 [ext_resource type="Texture2D" uid="uid://cij4cscyr2ti7" path="res://assets/remote_animation/frame0011.png" id="19_jq2sk"]
 [ext_resource type="Texture2D" uid="uid://iros0hel410q" path="res://assets/remote_animation/frame0012.png" id="20_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://dthcu3v3bulyo" path="res://sounds/ktosPodpalil.mp3" id="22_d13ii"]
+[ext_resource type="AudioStream" uid="uid://xtrohjty3ia0" path="res://sounds/tutajJakSieWjezdza.mp3" id="23_d13ii"]
+[ext_resource type="AudioStream" uid="uid://dadwkkqf5p5tp" path="res://music/NORMAL/NORMAL60ogg.ogg" id="24_1u8w0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_size = 321
@@ -139,3 +142,16 @@ position = Vector2(552, 327)
 
 [node name="Łapa" parent="CanvasLayer" instance=ExtResource("3_h2yge")]
 unique_name_in_owner = true
+
+[node name="porażkaDotWav" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_d13ii")
+volume_db = 10.0
+
+[node name="wygranaDotWav" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_d13ii")
+volume_db = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_1u8w0")
+autoplay = true
+parameters/looping = true

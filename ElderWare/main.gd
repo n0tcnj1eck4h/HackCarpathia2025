@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var porażka_dot_wav: AudioStreamPlayer = $porażkaDotWav
+@onready var wygrana_dot_wav: AudioStreamPlayer = $wygranaDotWav
+
+
 var score = 0
 const MINIGAMES = [
 	preload("res://minigames/test/test.tscn"),
@@ -34,6 +38,7 @@ func _next_minigame():
 func _on_minigame_failed():
 	self.zoom_out()
 	self._clear_minigame()
+	porażka_dot_wav.play()
 	score -= 1
 	$Status.text = "Porażka"
 	$Status.visible = true
@@ -47,6 +52,7 @@ func _on_minigame_failed():
 func _on_minigame_complete():
 	self.zoom_out()
 	self._clear_minigame()
+	wygrana_dot_wav.play()
 	score += 1
 	$Status.text = "Tak trzymaj!"
 	$Status.visible = true
