@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpihysfm03hjx"]
 
-[ext_resource type="Texture2D" uid="uid://bt5h1vkfmk15r" path="res://assets/farsz.png" id="1_vd7y0"]
+[ext_resource type="Texture2D" uid="uid://lyreumbchtpo" path="res://assets/farsz.png" id="1_vd7y0"]
 [ext_resource type="Script" uid="uid://durnl0q7mr85f" path="res://minigames/dumplings/filling.gd" id="2_csaa5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd7y0"]

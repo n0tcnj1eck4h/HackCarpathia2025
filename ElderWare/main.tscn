@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0li4w8dqe4h8" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bdnlawybchdkc" path="res://łapa.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" path="res://grandfather_clock.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dka7nr06hykks" path="res://grandfather_clock.tscn" id="4_1bvp3"]
 [ext_resource type="Script" path="res://status.gd" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bidq8bdtot0f3" path="res://assets/tablecloth.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://c8mch2xy0ik0k" path="res://assets/wall_pattern.png" id="6_82xsv"]
