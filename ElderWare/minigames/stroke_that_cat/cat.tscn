@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct0y2mt5r8jml"]
+
+[ext_resource type="Script" uid="uid://clwa1sxyvhg1s" path="res://minigames/stroke_that_cat/cat.gd" id="1_h8y2v"]
+[ext_resource type="Texture2D" uid="uid://bmyqquq8fh3nx" path="res://assets/gato.png" id="2_k3jhn"]
+[ext_resource type="Texture2D" uid="uid://78e2cx0ubr3v" path="res://assets/cat_progress_bar_outer.png" id="3_a4e6v"]
+[ext_resource type="Texture2D" uid="uid://bxfxr3x722ei7" path="res://assets/cat_progress_bar_bar.png" id="4_3gi8d"]
+[ext_resource type="Texture2D" uid="uid://mvoxjdjuovyh" path="res://assets/cat_progress_bar_head.png" id="5_3gi8d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knpjg"]
+radius = 89.0
+height = 414.0
+
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_h8y2v")
+
+[node name="Gato" type="Sprite2D" parent="."]
+position = Vector2(-21, 8)
+texture = ExtResource("2_k3jhn")
+
+[node name="HeadArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
+position = Vector2(-216, -26)
+shape = SubResource("CapsuleShape2D_knpjg")
+
+[node name="ButtArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtArea"]
+position = Vector2(249, -34)
+shape = SubResource("CapsuleShape2D_knpjg")
+
+[node name="ProgressBar" type="Node2D" parent="."]
+position = Vector2(-7, 24)
+
+[node name="SatisfactionBar" type="TextureProgressBar" parent="ProgressBar"]
+offset_left = 230.0
+offset_top = -314.0
+offset_right = 1254.0
+offset_bottom = 710.0
+scale = Vector2(0.500315, 0.500315)
+fill_mode = 3
+texture_over = ExtResource("3_a4e6v")
+texture_progress = ExtResource("4_3gi8d")
+
+[node name="CatProgressBarHead" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(486, 150)
+scale = Vector2(0.348633, 0.348633)
+texture = ExtResource("5_3gi8d")
+offset = Vector2(25, 40)
+
+[node name="BarStart" type="Node2D" parent="ProgressBar"]
+position = Vector2(486, 151)
+
+[node name="BarEnd" type="Node2D" parent="ProgressBar"]
+position = Vector2(482, -258)
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="mouse_shape_entered" from="HeadArea" to="." method="_on_head_area_mouse_shape_entered"]
+[connection signal="mouse_shape_entered" from="ButtArea" to="." method="_on_butt_area_mouse_shape_entered"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
