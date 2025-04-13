@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8uxnfkko0msv"]
+[gd_scene load_steps=28 format=3 uid="uid://b8uxnfkko0msv"]
 
 [ext_resource type="Script" uid="uid://0li4w8dqe4h8" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bdnlawybchdkc" path="res://łapa.tscn" id="3_h2yge"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://dthcu3v3bulyo" path="res://sounds/ktosPodpalil.mp3" id="22_d13ii"]
 [ext_resource type="AudioStream" uid="uid://xtrohjty3ia0" path="res://sounds/tutajJakSieWjezdza.mp3" id="23_d13ii"]
 [ext_resource type="AudioStream" uid="uid://dadwkkqf5p5tp" path="res://music/NORMAL/NORMAL60ogg.ogg" id="24_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dlw32kmq1rxj0" path="res://assets/hp.png" id="25_0odxb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_size = 321
@@ -117,7 +118,6 @@ script = ExtResource("4_7mycd")
 [node name="GrandfatherClock" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="TV" type="Node2D" parent="."]
-visible = false
 position = Vector2(7.67, 0)
 script = ExtResource("6_getpj")
 
@@ -155,3 +155,23 @@ volume_db = 10.0
 stream = ExtResource("24_1u8w0")
 autoplay = true
 parameters/looping = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-345, -177)
+scale = Vector2(0.66, 0.66)
+
+[node name="Hp" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1067, -291)
+texture = ExtResource("25_0odxb")
+
+[node name="Hp2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1045, 516)
+texture = ExtResource("25_0odxb")
+
+[node name="Hp3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1050, 1341)
+texture = ExtResource("25_0odxb")
+
+[node name="Hp4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1051, 2139)
+texture = ExtResource("25_0odxb")
