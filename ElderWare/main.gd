@@ -10,7 +10,7 @@ const MINIGAMES = [
 	{"scene":preload("res://minigames/pills/getyourmeds.tscn"),"message":"Get your meds!"},
 	{"scene":preload("res://minigames/police/police.tscn"),"message":"Call the police!"},
 	{"scene":preload("res://minigames/stroke_that_cat/stroke_that_cat.tscn"),"message":"Stroke that cat!"},
-	{"scene":preload("res://minigames/dumplings/make_some_dumplings.tscn","message":"Make dumplings!")}
+	{"scene":preload("res://minigames/dumplings/make_some_dumplings.tscn"),"message":"Make dumplings!"}
 ]
 
 var clock
