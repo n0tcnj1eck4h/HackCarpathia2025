@@ -42,7 +42,9 @@ func _next_minigame():
 	clock.reset()
 
 func _on_minigame_failed():
-	
+	if hp == 1:
+		$HeartAttack.visible = true
+		return
 	
 	clock.kill_babushka()
 	handle_transition()
