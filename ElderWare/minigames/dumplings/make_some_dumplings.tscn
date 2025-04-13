@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1e64j0vwf4w5"]
 
+[ext_resource type="Script" uid="uid://cnjo1gtbmqebg" path="res://minigames/dumplings/make_some_dumplings.gd" id="1_y2cme"]
 [ext_resource type="PackedScene" uid="uid://fcwmsna2awwl" path="res://minigames/dumplings/unmade_dumpling.tscn" id="2_kv7ns"]
-[ext_resource type="Texture2D" uid="uid://b64hlv2ou5xsu" path="res://assets/tablecloth.png" id="3_kv7ns"]
 [ext_resource type="PackedScene" uid="uid://dpihysfm03hjx" path="res://minigames/dumplings/filling.tscn" id="3_y2cme"]
 
 [node name="MakeSomeDumplings" type="Node2D"]
+script = ExtResource("1_y2cme")
 
 [node name="Unmade dumplings" type="Node" parent="."]
 
@@ -91,11 +92,3 @@ scale = Vector2(0.308342, 0.315414)
 position = Vector2(653, 408)
 rotation = -0.902242
 scale = Vector2(0.308342, 0.315414)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(752, 232)
-scale = Vector2(0.175209, 0.175209)
-texture = ExtResource("3_kv7ns")
-region_enabled = true
-region_rect = Rect2(0, 0, 10000, 10000)

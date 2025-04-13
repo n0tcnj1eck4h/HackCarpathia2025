@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs4od8oolq1m4"]
 
-[ext_resource type="Texture2D" uid="uid://dgyg0ab8u0jfn" path="res://assets/pierog.png" id="1_h2ols"]
+[ext_resource type="Texture2D" uid="uid://cqcvl1ghjaac7" path="res://assets/pierog.png" id="1_h2ols"]
 
 [node name="Dumpling" type="Area2D"]
 scale = Vector2(2.18088, 2.18088)
