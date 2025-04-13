@@ -30,18 +30,6 @@ scale = Vector2(0.717973, 0.717973)
 position = Vector2(344, 267)
 scale = Vector2(0.717973, 0.717973)
 
-[node name="UnmadeDumpling5" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
-position = Vector2(800, 123)
-scale = Vector2(0.717973, 0.717973)
-
-[node name="UnmadeDumpling6" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
-position = Vector2(653, 120)
-scale = Vector2(0.717973, 0.717973)
-
-[node name="UnmadeDumpling8" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
-position = Vector2(501, 120)
-scale = Vector2(0.717973, 0.717973)
-
 [node name="Fillings" type="Node" parent="."]
 
 [node name="Filling" parent="Fillings" instance=ExtResource("3_y2cme")]

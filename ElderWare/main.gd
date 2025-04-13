@@ -63,7 +63,7 @@ func handle_transition():
 	self.zoom_out()
 	self._clear_minigame()
 	$Status.text = minigame_dict.message
-	if score % 5 == 0:
+	if score % 5 == 0 and score != 0:
 		Engine.time_scale += 0.4
 		$Status.text = minigame_dict.message + "\n" + " Speed up!"
 	$Status.visible = true

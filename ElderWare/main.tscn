@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://iros0hel410q" path="res://assets/remote_animation/frame0012.png" id="20_4k2k6"]
 [ext_resource type="AudioStream" uid="uid://dthcu3v3bulyo" path="res://sounds/ktosPodpalil.mp3" id="22_d13ii"]
 [ext_resource type="AudioStream" uid="uid://xtrohjty3ia0" path="res://sounds/tutajJakSieWjezdza.mp3" id="23_d13ii"]
-[ext_resource type="AudioStream" uid="uid://bm01pobp63igf" path="res://music/feverDream/feverDream220.wav" id="24_lswn8"]
+[ext_resource type="AudioStream" uid="uid://dp2kvqx367rek" path="res://music/NORMAL/NORMAL60.wav" id="24_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dlw32kmq1rxj0" path="res://assets/hp.png" id="25_0odxb"]
 [ext_resource type="Texture2D" uid="uid://x6tc6bgnieg8" path="res://assets/heart_attack.png" id="26_lswn8"]
 
