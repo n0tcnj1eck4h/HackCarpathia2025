@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv4hlccxu85vs"]
+[gd_scene load_steps=9 format=3 uid="uid://dv4hlccxu85vs"]
 
 [ext_resource type="Script" uid="uid://bub1uxdjykbki" path="res://minigames/pills/getyourmeds.gd" id="1_ypn2g"]
 [ext_resource type="AudioStream" uid="uid://cm4n6a8n1detg" path="res://sounds/lonczna44.mp3" id="2_6tcb6"]
 [ext_resource type="PackedScene" uid="uid://dtxucvg2yetwu" path="res://minigames/pills/sloik.tscn" id="2_73ia1"]
-[ext_resource type="Texture2D" uid="uid://cplno7oh5eiy3" path="res://assets/pigulka2.png" id="3_ddq70"]
-[ext_resource type="Texture2D" uid="uid://cqkx2kq06xw5x" path="res://assets/pigulki.png" id="5_g6yec"]
+[ext_resource type="PackedScene" uid="uid://dt2k88u6xxqoh" path="res://minigames/pills/pill.tscn" id="3_ypn2g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g6yec"]
 
@@ -13,14 +12,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4nmrt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ypn2g"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypn2g"]
-radius = 20.7249
-height = 93.0436
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6yec"]
-radius = 22.7933
-height = 94.4027
 
 [node name="GetYourMeds" type="Node2D"]
 script = ExtResource("1_ypn2g")
@@ -52,72 +43,23 @@ position = Vector2(635, -806)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_ypn2g")
 
-[node name="Pill" type="RigidBody2D" parent="."]
-position = Vector2(266, 322)
+[node name="Pill" parent="." instance=ExtResource("3_ypn2g")]
+position = Vector2(268, 347)
 rotation = 0.855507
 
-[node name="Pigulka2" type="Sprite2D" parent="Pill"]
-position = Vector2(20, 63)
-scale = Vector2(0.291016, 0.291016)
-texture = ExtResource("3_ddq70")
+[node name="Pill2" parent="." instance=ExtResource("3_ypn2g")]
+position = Vector2(184, 353)
+rotation = 2.89172
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill"]
-rotation = 1.40154
-shape = SubResource("CapsuleShape2D_ypn2g")
-
-[node name="Pill2" type="RigidBody2D" parent="."]
-position = Vector2(182, 165)
-
-[node name="Pigulka2" type="Sprite2D" parent="Pill2"]
-position = Vector2(20, 63)
-scale = Vector2(0.291016, 0.291016)
-texture = ExtResource("3_ddq70")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill2"]
-rotation = 1.40154
-shape = SubResource("CapsuleShape2D_ypn2g")
-
-[node name="Pill3" type="RigidBody2D" parent="."]
-position = Vector2(186, 276)
-rotation = -0.380006
-
-[node name="Pigulka2" type="Sprite2D" parent="Pill3"]
-position = Vector2(20, 63)
-scale = Vector2(0.291016, 0.291016)
-texture = ExtResource("3_ddq70")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill3"]
-rotation = 1.40154
-shape = SubResource("CapsuleShape2D_ypn2g")
-
-[node name="Pill4" type="RigidBody2D" parent="."]
-position = Vector2(258, 220)
-rotation = 0.781504
-
-[node name="Pigulka2" type="Sprite2D" parent="Pill4"]
-position = Vector2(20, 63)
-scale = Vector2(0.291016, 0.291016)
-texture = ExtResource("3_ddq70")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill4"]
-rotation = 1.40154
-shape = SubResource("CapsuleShape2D_ypn2g")
-
-[node name="GoodPill" type="RigidBody2D" parent="."]
-position = Vector2(188, 335)
-rotation = -0.467192
+[node name="Pill3" parent="." instance=ExtResource("3_ypn2g")]
+position = Vector2(261, 252)
+rotation = -2.86116
 scale = Vector2(1, 1)
-contact_monitor = true
-max_contacts_reported = 10
 
-[node name="Pigulki" type="Sprite2D" parent="GoodPill"]
-position = Vector2(19, 61)
-scale = Vector2(0.289062, 0.289062)
-texture = ExtResource("5_g6yec")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodPill"]
-rotation = 1.40684
-shape = SubResource("CapsuleShape2D_g6yec")
+[node name="GoodPill" parent="." instance=ExtResource("3_ypn2g")]
+position = Vector2(187, 262)
+rotation = 1.71101
+color = 1
 
 [node name="Sloik" parent="." instance=ExtResource("2_73ia1")]
 position = Vector2(210, 257)
