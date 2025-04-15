@@ -64,7 +64,7 @@ rotation = 1.40154
 shape = SubResource("CapsuleShape2D_ypn2g")
 
 [node name="Pill2" type="RigidBody2D" parent="."]
-position = Vector2(188, 359)
+position = Vector2(182, 165)
 
 [node name="Pigulka2" type="Sprite2D" parent="Pill2"]
 position = Vector2(20, 63)
@@ -102,9 +102,10 @@ rotation = 1.40154
 shape = SubResource("CapsuleShape2D_ypn2g")
 
 [node name="GoodPill" type="RigidBody2D" parent="."]
-position = Vector2(188, 179)
+position = Vector2(188, 335)
 rotation = -0.467192
-input_pickable = true
+contact_monitor = true
+max_contacts_reported = 10
 
 [node name="Pigulki" type="Sprite2D" parent="GoodPill"]
 position = Vector2(19, 61)

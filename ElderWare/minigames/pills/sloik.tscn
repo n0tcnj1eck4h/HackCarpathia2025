@@ -59,4 +59,5 @@ shape = SubResource("CircleShape2D_73ia1")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="MousePosition"]
 
+[connection signal="body_exited" from="SloikBody/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="input_event" from="SloikBody/Area2D" to="." method="_on_area_2d_input_event"]

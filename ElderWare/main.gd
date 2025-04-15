@@ -64,8 +64,9 @@ func handle_transition():
 	self._clear_minigame()
 	$Status.text = minigame_dict.message
 	if score % 5 == 0 and score != 0:
-		Engine.time_scale += 0.4
-		$Status.text = minigame_dict.message + "\n" + " Speed up!"
+		#Engine.time_scale += 0.4
+		#$Status.text = minigame_dict.message + "\n" + " Speed up!"
+		pass
 	$Status.visible = true
 	$Score.text = "Score: %s" % score
 	await get_tree().create_timer(2.0).timeout
