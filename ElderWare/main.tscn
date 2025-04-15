@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://xcrune54c73y" path="res://status.gd" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bidq8bdtot0f3" path="res://assets/tablecloth.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://c8mch2xy0ik0k" path="res://assets/wall_pattern.png" id="6_82xsv"]
-[ext_resource type="Script" path="res://tv.gd" id="6_getpj"]
+[ext_resource type="Script" uid="uid://cgpx6fg775uhb" path="res://tv.gd" id="6_getpj"]
 [ext_resource type="Texture2D" uid="uid://dvr7vlwvpydvd" path="res://assets/tv_transparent.png" id="8_getpj"]
 [ext_resource type="Texture2D" uid="uid://bdpn3a1n0f81k" path="res://assets/remote_animation/frame0000.png" id="8_ryguw"]
 [ext_resource type="Texture2D" uid="uid://da3ugcby2731t" path="res://assets/remote_animation/frame0001.png" id="9_d13ii"]
