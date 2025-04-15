@@ -10,10 +10,6 @@ script = ExtResource("1_y2cme")
 
 [node name="Unmade dumplings" type="Node" parent="."]
 
-[node name="UnmadeDumpling" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
-position = Vector2(344, 123)
-scale = Vector2(0.717973, 0.717973)
-
 [node name="UnmadeDumpling2" parent="Unmade dumplings" instance=ExtResource("2_kv7ns")]
 position = Vector2(504, 267)
 scale = Vector2(0.717973, 0.717973)

@@ -1,12 +1,118 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv4hlccxu85vs"]
+[gd_scene load_steps=10 format=3 uid="uid://dv4hlccxu85vs"]
 
-[ext_resource type="Script" uid="uid://bub1uxdjykbki" path="res://minigames/pills/getyourmeds.gd" id="1_vaxek"]
+[ext_resource type="Script" uid="uid://bub1uxdjykbki" path="res://minigames/pills/getyourmeds.gd" id="1_ypn2g"]
 [ext_resource type="AudioStream" uid="uid://cm4n6a8n1detg" path="res://sounds/lonczna44.mp3" id="2_6tcb6"]
+[ext_resource type="PackedScene" uid="uid://dtxucvg2yetwu" path="res://minigames/pills/sloik.tscn" id="2_73ia1"]
+[ext_resource type="Texture2D" uid="uid://cplno7oh5eiy3" path="res://assets/pigulka2.png" id="3_ddq70"]
+[ext_resource type="Texture2D" uid="uid://cqkx2kq06xw5x" path="res://assets/pigulki.png" id="5_g6yec"]
 
-[node name="Getyourmeds" type="Node2D"]
-script = ExtResource("1_vaxek")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73ia1"]
+size = Vector2(1338, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddq70"]
+size = Vector2(78, 653)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypn2g"]
+radius = 20.7249
+height = 93.0436
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6yec"]
+radius = 22.7933
+height = 94.4027
+
+[node name="GetYourMeds" type="Node2D"]
+script = ExtResource("1_ypn2g")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6tcb6")
 volume_db = 10.0
 autoplay = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-71, 604)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(652, -111)
+shape = SubResource("RectangleShape2D_73ia1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34, -438)
+shape = SubResource("RectangleShape2D_ddq70")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1243, -428)
+shape = SubResource("RectangleShape2D_ddq70")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(635, -806)
+shape = SubResource("RectangleShape2D_73ia1")
+
+[node name="Sloik" parent="." instance=ExtResource("2_73ia1")]
+position = Vector2(210, 257)
+
+[node name="Pill" type="RigidBody2D" parent="."]
+position = Vector2(266, 322)
+rotation = 0.855507
+
+[node name="Pigulka2" type="Sprite2D" parent="Pill"]
+position = Vector2(20, 63)
+scale = Vector2(0.291016, 0.291016)
+texture = ExtResource("3_ddq70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill"]
+rotation = 1.40154
+shape = SubResource("CapsuleShape2D_ypn2g")
+
+[node name="Pill2" type="RigidBody2D" parent="."]
+position = Vector2(188, 359)
+
+[node name="Pigulka2" type="Sprite2D" parent="Pill2"]
+position = Vector2(20, 63)
+scale = Vector2(0.291016, 0.291016)
+texture = ExtResource("3_ddq70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill2"]
+rotation = 1.40154
+shape = SubResource("CapsuleShape2D_ypn2g")
+
+[node name="Pill3" type="RigidBody2D" parent="."]
+position = Vector2(186, 276)
+rotation = -0.380006
+
+[node name="Pigulka2" type="Sprite2D" parent="Pill3"]
+position = Vector2(20, 63)
+scale = Vector2(0.291016, 0.291016)
+texture = ExtResource("3_ddq70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill3"]
+rotation = 1.40154
+shape = SubResource("CapsuleShape2D_ypn2g")
+
+[node name="Pill4" type="RigidBody2D" parent="."]
+position = Vector2(258, 220)
+rotation = 0.781504
+
+[node name="Pigulka2" type="Sprite2D" parent="Pill4"]
+position = Vector2(20, 63)
+scale = Vector2(0.291016, 0.291016)
+texture = ExtResource("3_ddq70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pill4"]
+rotation = 1.40154
+shape = SubResource("CapsuleShape2D_ypn2g")
+
+[node name="GoodPill" type="RigidBody2D" parent="."]
+position = Vector2(188, 179)
+rotation = -0.467192
+input_pickable = true
+
+[node name="Pigulki" type="Sprite2D" parent="GoodPill"]
+position = Vector2(19, 61)
+scale = Vector2(0.289062, 0.289062)
+texture = ExtResource("5_g6yec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodPill"]
+rotation = 1.40684
+shape = SubResource("CapsuleShape2D_g6yec")
+
+[connection signal="input_event" from="GoodPill" to="." method="_on_good_pill_input_event"]

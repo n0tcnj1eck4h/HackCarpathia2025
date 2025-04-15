@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtxucvg2yetwu"]
+
+[ext_resource type="Script" uid="uid://ob8ukmh00vut" path="res://minigames/pills/sloik.gd" id="1_k12iy"]
+[ext_resource type="Texture2D" uid="uid://d4kk30g3ollai" path="res://assets/sloik.png" id="2_bo54v"]
+[ext_resource type="Script" uid="uid://4paiuec0akoe" path="res://minigames/pills/mouse_position.gd" id="3_kbe7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6yec"]
+size = Vector2(225, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irme5"]
+size = Vector2(20, 283)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nmrt"]
+size = Vector2(20, 295)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lo8ko"]
+radius = 163.0
+height = 374.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73ia1"]
+
+[node name="Sloik" type="Node2D"]
+script = ExtResource("1_k12iy")
+
+[node name="SloikBody" type="RigidBody2D" parent="."]
+mass = 3.47
+angular_damp = 1.0
+
+[node name="Sloik" type="Sprite2D" parent="SloikBody"]
+position = Vector2(9, -45)
+scale = Vector2(0.536133, 0.536133)
+texture = ExtResource("2_bo54v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SloikBody"]
+position = Vector2(8.5, 141)
+shape = SubResource("RectangleShape2D_g6yec")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SloikBody"]
+position = Vector2(-91, -10.5)
+shape = SubResource("RectangleShape2D_irme5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SloikBody"]
+position = Vector2(112, 0.5)
+shape = SubResource("RectangleShape2D_4nmrt")
+
+[node name="Area2D" type="Area2D" parent="SloikBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SloikBody/Area2D"]
+position = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_lo8ko")
+
+[node name="MousePosition" type="CharacterBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_kbe7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MousePosition"]
+shape = SubResource("CircleShape2D_73ia1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="MousePosition"]
+
+[connection signal="input_event" from="SloikBody/Area2D" to="." method="_on_area_2d_input_event"]
